@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Daniil (noir345)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="scanlines"></div>
+    <div class="retro-grid-wrap"><div class="retro-grid"></div></div>
+
+    <div class="ui-container">
+        <div class="hero-card nes-container is-dark with-title">
+            <p class="title" id="title">PLAYER 1</p>
+
+            <div class="lang-header">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Ukraine.svg" class="pixel-flag" onclick="setLang('ua')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" class="pixel-flag" onclick="setLang('en')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Flag_of_Slovakia.svg" class="pixel-flag" onclick="setLang('sk')">
+            </div>
+
+            <div class="nav-tabs">
+                <button class="nes-btn is-primary" id="tab-profile" onclick="showTab('profile')">PROFILE</button>
+                <button class="nes-btn" id="tab-projects" onclick="showTab('projects')">QUESTS</button>
+            </div>
+
+            <div id="profile-section">
+                <div class="card-content">
+                    <div class="avatar-section">
+                        <div class="pixel-border">
+                            <img src="avatar.png" alt="Daniil">
+                        </div>
+                        <h3 style="color: #f7d51d; margin-top: 15px; margin-bottom: 5px;">Daniil</h3>
+                        <p style="font-size: 10px; color: #aaa; margin-bottom: 15px;">noir345</p>
+                        <p id="levellol" style="font-size: 10px; color: #4D4DFF;">LVL 3 (NEWBIE)</p>
+                    </div>
+
+                    <div class="stats-section">
+                        <label>Python <span style="float:right; color: #4aa52e;">50%</span></label>
+                        <progress class="nes-progress is-success" value="50" max="100"></progress>
+                        
+                        <label>JavaScript <span style="float:right; color: #f7d51d;">2%</span></label>
+                        <progress class="nes-progress is-warning" value="2" max="100"></progress>
+
+                        <label id="html-label">HTML/CSS: undefined</label>
+                        <progress class="nes-progress" value="0" max="100"></progress>
+
+                        <label id="linux-label">Linux <span style="float:right; color: #f7d51d;">5%</span></label>
+                        <progress class="nes-progress is-warning" value="5" max="100"></progress>
+
+                        <div class="inventory-box">
+                            <p id="whoreadingthis" style="font-size: 10px; color: #f7d51d;">INVENTORY:</p>
+                            <div class="item-grid">
+                                <div><i class="fa-brands fa-git-alt"></i> Git</div>
+                                <div><i class="fa-solid fa-mug-hot"></i> Lovare Tea</div>
+                                <div><i class="fa-solid fa-clock"></i> Alarm Clock</div>
+                                <div><i class="fa-solid fa-scroll"></i> Blanket</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="projects-section" style="display: none;">
+                <div class="quest-group">
+                    <h4 id="idkreally" class="toggle-header" onclick="toggleGroup('active-list')">> ACTIVE QUESTS [-]</h4>
+                    <div id="active-list" class="quest-list">
+                        <div class="project-card">
+                            <i class="fa-solid fa-hammer project-icon"></i>
+                            <div class="project-info">
+                                <h4 id="proj-name">PassGenX</h4>
+                                <p id="proj-desc" style="font-size: 10px; color: #ccc;">Still building...</p>
+                                <span class="nes-badge"><span class="is-warning" style="font-size: 8px;">UNDER_CONSTRUCTION</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quest-group" style="margin-top: 20px;">
+                    <h4 id="done-title" class="toggle-header" onclick="toggleGroup('done-list')">> COMPLETED QUESTS [+]</h4>
+                    <div id="done-list" class="quest-list" style="display: none;">
+                        <div class="nes-container is-dark is-centered" style="border-style: dashed;">
+                            <p id="empty-msg" style="font-size: 10px; color: #e76e55; margin: 0;">Why are you looking here? 0_0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <p id="socialmed">CONNECT:</p>
+                <div class="social-icons">
+                    <a href="https://github.com/noir345" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://t.me/noir345" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sk-warn" class="modal" style="display:none">
+        <div class="nes-container is-dark with-title is-centered">
+            <p class="title">POZOR</p>
+            <p style="font-size:12px; margin-bottom:20px; line-height: 1.6;">Slovenská verzia je stále vo výstavbe!</p>
+            <button class="nes-btn is-error" onclick="document.getElementById('sk-warn').style.display='none'">ZAVRIEŤ</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
